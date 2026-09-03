@@ -1,18 +1,8 @@
 <?php require __DIR__ . '/../layouts/header.php'; ?>
 
-<h1>Produtos</h1>
-
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        margin: 0;
-        padding: 40px;
-    }
-
     .container {
         max-width: 1200px;
-        margin: auto;
         background: white;
         padding: 30px;
         border-radius: 8px;
@@ -25,7 +15,7 @@
         margin-bottom: 25px;
     }
 
-    h1 {
+    .topo h1 {
         margin: 0;
     }
 
@@ -95,22 +85,13 @@
         color: #666;
     }
 </style>
-</head>
 
-<body>
-
+<div class="content">
     <div class="container">
 
         <div class="topo">
-
             <h1>Produtos cadastrados</h1>
-
-            <a
-                href="index.php?acao=cadastro"
-                class="botao">
-                + Novo produto
-            </a>
-
+            <a href="index.php?acao=cadastro" class="botao">+ Novo produto</a>
         </div>
 
         <?php if (empty($produtos)): ?>
@@ -122,9 +103,7 @@
         <?php else: ?>
 
             <table>
-
                 <thead>
-
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
@@ -135,59 +114,30 @@
                         <th>Raridade</th>
                         <th>Ações</th>
                     </tr>
-
                 </thead>
 
                 <tbody>
-
                     <?php foreach ($produtos as $produto): ?>
-
                         <tr>
-
-                            <td>
-                                <?= htmlspecialchars($produto['id']) ?>
-                            </td>
-
-                            <td>
-                                <?= htmlspecialchars($produto['nome']) ?>
-                            </td>
-
-                            <td>
-                                <?= htmlspecialchars($produto['nome_port'] ?? '') ?>
-                            </td>
-
-                            <td>
-                                <?= htmlspecialchars($produto['nome_cardgame']) ?>
-                            </td>
-
-                            <td>
-                                <?= htmlspecialchars($produto['nome_edicao']) ?>
-                            </td>
+                            <td><?= htmlspecialchars($produto['id']) ?></td>
+                            <td><?= htmlspecialchars($produto['nome']) ?></td>
+                            <td><?= htmlspecialchars($produto['nome_port'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($produto['nome_cardgame']) ?></td>
+                            <td><?= htmlspecialchars($produto['nome_edicao']) ?></td>
                             <td>
                                 <?php if (!empty($produto['imagem'])): ?>
-
                                     <img
                                         src="imagens/cartas/<?= htmlspecialchars($produto['imagem']) ?>"
                                         alt="<?= htmlspecialchars($produto['nome']) ?>"
                                         class="imagem-produto">
-
                                 <?php else: ?>
-
                                     <span>Sem imagem</span>
-
                                 <?php endif; ?>
                             </td>
+                            <td><?= htmlspecialchars($produto['raridade'] ?? '') ?></td>
                             <td>
-                                <?= htmlspecialchars($produto['raridade'] ?? '') ?>
-                            </td>
-
-                            <td>
-
                                 <div class="acoes">
-
-                                    <a
-                                        href="index.php?acao=editar&id=<?= $produto['id'] ?>"
-                                        class="botao editar">
+                                    <a href="index.php?acao=editar&id=<?= $produto['id'] ?>" class="botao editar">
                                         Editar
                                     </a>
 
@@ -195,35 +145,19 @@
                                         action="index.php?acao=excluir"
                                         method="POST"
                                         onsubmit="return confirm('Tem certeza que deseja excluir este produto?');">
-
-                                        <input
-                                            type="hidden"
-                                            name="id"
-                                            value="<?= $produto['id'] ?>">
-
-                                        <button
-                                            type="submit"
-                                            class="botao excluir">
-                                            Excluir
-                                        </button>
-
+                                        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+                                        <button type="submit" class="botao excluir">Excluir</button>
                                     </form>
-
                                 </div>
-
                             </td>
-
                         </tr>
-
                     <?php endforeach; ?>
-
                 </tbody>
-
             </table>
 
         <?php endif; ?>
 
     </div>
+</div>
 
-</body>
 <?php require __DIR__ . '/../layouts/footer.php'; ?>

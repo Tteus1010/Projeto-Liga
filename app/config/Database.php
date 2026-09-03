@@ -12,7 +12,7 @@ class Database
         $this->host = getenv('DB_HOST') ?: 'mysql';
         $this->database = getenv('DB_DATABASE') ?: 'db_projliga';
         $this->user = getenv('DB_USER') ?: 'root';
-        $this->password = getenv('DB_PASSWORD') ?: '12345678*';
+        $this->password = getenv('DB_PASSWORD') ?: 'root';
     }
 
     public function connect(): PDO
@@ -37,7 +37,7 @@ class Database
             return $pdo;
 
         } catch (PDOException $e) {
-            die("Erro na conexão com o banco de dados.");
+            die("Erro na conexão com o banco de dados." . $e->getMessage());
         }
     }
 }

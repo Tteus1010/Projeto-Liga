@@ -86,3 +86,6 @@ Não é necessário instalar PHP ou MySQL diretamente na máquina, pois ambos s�
 
 ```bash
 git clone https://github.com/Tteus1010/Projeto-Liga.git
+
+Usuário: admin
+Senha: 123456
