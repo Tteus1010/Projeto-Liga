@@ -89,3 +89,31 @@ git clone https://github.com/Tteus1010/Projeto-Liga.git
 
 Usuário: admin
 Senha: 123456
+
+## 2. Configurar variáveis de ambiente
+
+Copie o arquivo de exemplo e ajuste se necessário:
+
+```bash
+cp .env.example .env
+```
+
+## 3. Subir os containers
+
+```bash
+docker compose up -d --build
+```
+
+Esse comando builda a imagem PHP/Apache e sobe os containers da aplicação (porta `8080`) e do MySQL (porta `3307`), em segundo plano.
+
+## 4. Acessar o projeto
+
+http://localhost:8080
+
+
+## Credenciais de teste (seed)
+
+> Usuário criado automaticamente pelo seed do banco, apenas para ambiente de desenvolvimento.
+
+- Usuário: `admin`
+- Senha: `123456`
