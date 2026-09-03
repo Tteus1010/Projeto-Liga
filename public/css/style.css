@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* MENU */
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+
+  background: #1e1e1e;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  padding: 25px 20px;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  border-bottom: 1px solid #333;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+
+  padding: 15px 0;
+}
+
+.sidebar a {
+  padding: 14px 20px;
+
+  color: #ddd;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: #333;
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+
+  border-top: 1px solid #333;
+}
+
+.usuario-logado {
+  padding: 15px 20px;
+
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+  flex: 1;
+
+  padding: 30px;
+  min-width: 0;
+}
+
+.imagem-produto {
+  width: 70px;
+  height: 98px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  display: block;
+}
+/* =========================================================
+   EDITAR PRODUTO
+========================================================= */
+
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cabecalho-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #222;
+}
+
+.cabecalho-pagina p {
+  margin: 0;
+  color: #777;
+}
+
+.botao-voltar {
+  text-decoration: none;
+  color: #555;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.botao-voltar:hover {
+  background: #f0f0f0;
+}
+
+/* CARD */
+
+.card-form {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8e8e8;
+}
+
+.card-titulo {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 22px;
+}
+
+.card-titulo h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #222;
+}
+
+.card-titulo span {
+  font-size: 13px;
+  color: #888;
+}
+
+/* FORM */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.campo-full {
+  grid-column: 1 / -1;
+}
+
+.campo label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: #555;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* IMAGEM */
+
+.imagem-area {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.preview-container {
+  width: 180px;
+  height: 250px;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preview-vazio {
+  text-align: center;
+  color: #999;
+}
+
+.preview-vazio span {
+  font-size: 40px;
+}
+
+.preview-vazio p {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.upload-area {
+  flex: 1;
+}
+
+.upload-label {
+  min-height: 150px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.upload-label:hover {
+  background: #fafafa;
+  border-color: #999;
+}
+
+.upload-icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.upload-label strong {
+  color: #333;
+  font-size: 15px;
+}
+
+.upload-label small {
+  color: #888;
+  margin-top: 6px;
+}
+
+.input-imagem-edicao {
+    display: none;
+}
+
+.nome-arquivo {
+  margin: 10px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+/* BOTÕES */
+
+.acoes-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.botao-cancelar,
+.botao-salvar {
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.botao-cancelar {
+  background: #e9e9e9;
+  color: #444;
+}
+
+.botao-cancelar:hover {
+  background: #ddd;
+}
+
+.botao-salvar {
+  background: #222;
+  color: white;
+}
+
+.botao-salvar:hover {
+  background: #444;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-full {
+    grid-column: auto;
+  }
+
+  .imagem-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .preview-container {
+    margin: 0 auto;
+  }
+
+  .cabecalho-pagina {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
